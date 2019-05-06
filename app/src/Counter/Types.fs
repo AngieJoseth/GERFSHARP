@@ -1,8 +1,9 @@
 module Counter.Types
 
-type Model = int
-
+type Model = string
 type Msg =
-    | Increment
-    | Decrement
-    | Reset
+    | Codigo of string
+    | Nombre of string
+    | Cantidad of string
+    | Unidad of string
+    | Precio of string
