@@ -14,27 +14,6 @@ open Global
 importAll "../sass/main.sass"
 
 open Fable.Helpers.React
-open Fable.Helpers.React.Props
-
-let menuItem label page currentPage =
-    li
-      [ ]
-      [ a
-          [ classList [ "is-active", page = currentPage ]
-            Href (toHash page) ]
-          [ str label ] ]
-
-let menu currentPage =
-  aside
-    [ ClassName "menu" ]
-    [ p
-        [ ClassName "menu-label" ]
-        [ str "General" ]
-      ul
-        [ ClassName "menu-list" ]
-        [ menuItem "Home" Home currentPage
-          menuItem "Counter sample" Counter currentPage
-          menuItem "About" Page.About currentPage ] ]
 
 let root model dispatch =
 
@@ -46,19 +25,7 @@ let root model dispatch =
 
   div
     []
-    [ Navbar.View.root
-      div
-        [ ClassName "section" ]
-        [ div
-            [ ClassName "container" ]
-            [ div
-                [ ClassName "columns" ]
-                [ div
-                    [ ClassName "column is-3" ]
-                    [ menu model.CurrentPage ]
-                  div
-                    [ ClassName "column" ]
-                    [ pageHtml model.CurrentPage ] ] ] ] ]
+    [ Navbar.View.root ]
 
 open Elmish.React
 open Elmish.Debug

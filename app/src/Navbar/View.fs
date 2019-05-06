@@ -12,7 +12,7 @@ let navButton classy href faClass txt =
             [ span
                 [ ClassName "icon" ]
                 [ i
-                    [ ClassName (sprintf "fab %s" faClass) ]
+                    [ ClassName (sprintf "fas %s" faClass) ]
                     [ ] ]
               span
                 [ ]
@@ -23,9 +23,7 @@ let navButtons =
         [ ClassName "navbar-item" ]
         [ div
             [ ClassName "field is-grouped" ]
-            [ navButton "twitter" "https://twitter.com/FableCompiler" "fa-twitter" "Twitter"
-              navButton "github" "https://github.com/elmish/elmish" "fa-github" "Fork me"
-              navButton "github" "https://gitter.im/fable-compiler/Fable" "fa-gitter" "Gitter" ] ]
+            [ navButton "is-dark" "" "fa-user-lock" ""] ]
 
 let root =
     nav
