@@ -14,18 +14,57 @@ open Global
 importAll "../sass/main.sass"
 
 open Fable.Helpers.React
+open Fable.Helpers.React.Props
+
+let menuItem label page currentPage =
+    li
+      [ ]
+      [ a
+          [ classList [ "is-active", page = currentPage ]
+            Href (toHash page) ]
+          [ str label ] ]
+          
+
+let menu currentPage =
+  aside
+    [ ClassName "menu" ]
+    [ p 
+        [ ClassName "menu-label" ]
+        [ str "General"]
+      ul
+          [ ClassName "menu-list"] 
+          [  menuItem "Home" Home currentPage  
+             menuItem  "Counter" Counter currentPage 
+             //menuItem  "About" Page.About currentPage         
+                ] ] 
 
 let root model dispatch =
 
   let pageHtml page =
     match page with
-    | Page.About -> Info.View.root
-    | Counter -> Counter.View.root model.Counter (CounterMsg >> dispatch)
+    //| Page.About -> Info.View.root
+    //| Counter -> Counter.View.registro model.Counter (CounterMsg >> dispatch)
     | Home -> Home.View.root model.Home (HomeMsg >> dispatch)
+    | Counter -> failwith "Not Implemented"
 
   div
     []
-    [ Navbar.View.root ]
+
+    [ 
+     
+      Navbar.View.root
+      div
+        [ ClassName "navbar" ]
+        [ div
+            [ ClassName "container" ]
+            [ div
+                [ ClassName "navbar-brand" ]
+                [ div
+                    [ ClassName "navbar-item title is-4" ]
+                    [ menu model.CurrentPage ]
+                  div
+                    [ ClassName "navbar-item title is-4" ]
+                    [ pageHtml model.CurrentPage ] ] ] ] ]
 
 open Elmish.React
 open Elmish.Debug
