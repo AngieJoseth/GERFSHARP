@@ -9,8 +9,6 @@ open Types
 
 let pageParser: Parser<Page->Page,Page> =
     oneOf [
-        map About (s "about")
-        map Counter (s "counter")
         map Home (s "home")
     ]
 

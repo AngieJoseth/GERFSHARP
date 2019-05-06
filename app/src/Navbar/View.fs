@@ -18,10 +18,11 @@ let navButton classy href faClass txt =
               span
                 [ ]
                 [ str txt ] ] ]
-let navButton1 clase  texto  =
+let navButton1 clase href  texto  =
     p
-      [ ClassName (sprintf "button %s" clase )]
-      [ span 
+      [ ClassName (sprintf "button %s" clase )
+        Href href]
+      [ span
           [ ]
           [ str texto]]
 let navButtons =
@@ -30,20 +31,20 @@ let navButtons =
         [ div
             [ ClassName "field is-grouped" ]
             [ navButton "is-dark" "" "fa-user-lock" ""] ]
+
 let navButtons1 =
     ul
-        [ ]
-        
-        [ 
-          li
-            [   ]
-            [ navButton1 "is-dark" "Productos"]
-          li
-            [   ]
-            [ navButton1 "is-dark" "Proveedores"] 
-          li
-            [  ]
-            [ navButton1 "is-dark" "Pedidos"]]           
+      [ ]
+      [ li
+          []
+          [ navButton1 "is-dark" "" "Productos"]
+        li
+          []
+          [ navButton1 "is-dark" "" "Proveedores"]
+        li
+          []
+          [ navButton1 "is-dark" "" "Pedidos"]]
+
 
 let root =
     nav
