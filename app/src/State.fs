@@ -9,8 +9,9 @@ open Types
 
 let pageParser: Parser<Page->Page,Page> =
     oneOf [
-        map Home (s "home")
-    ]
+           map Proveedor (s "proveedor")
+           map Home (s "home")
+            ]
 
 let urlUpdate (result : Page option) model =
     match result with
@@ -22,22 +23,18 @@ let urlUpdate (result : Page option) model =
 
 let init result =
    // let (counter, counterCmd) = Counter.State.init()
-    let (home, homeCmd) = Home.State.init()
+    let (proveedor, proveedorCmd) = Proveedores.State.init()
     let (model, cmd) =
         urlUpdate result
           { CurrentPage = Home
-           // Counter = counter
-            Home = home }
+            Proveedor = proveedor }
 
     model, Cmd.batch [ cmd
                       // Cmd.map CounterMsg counterCmd
-                       Cmd.map HomeMsg homeCmd ]
+                       Cmd.map ProveedorMsg proveedorCmd ]
 
 let update msg model =
     match msg with
-    // | CounterMsg msg ->
-    //     let (counter, counterCmd) = Counter.State.update msg model.Counter
-    //     { model with Counter = counter }, Cmd.map CounterMsg counterCmd
-    | HomeMsg msg ->
-        let (home, homeCmd) = Home.State.update msg model.Home
-        { model with Home = home }, Cmd.map HomeMsg homeCmd
+    | ProveedorMsg msg ->
+        let (proveedor, proveedorCmd) = Proveedores.State.update msg model.Proveedor
+        { model with Proveedor = proveedor }, Cmd.map ProveedorMsg proveedorCmd

@@ -2,7 +2,6 @@ module Navbar.View
 
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
-open Global
 
 let navButton classy href faClass txt =
     p
@@ -18,6 +17,7 @@ let navButton classy href faClass txt =
               span
                 [ ]
                 [ str txt ] ] ]
+
 let navButton1 clase href  texto  =
     p
       [ ClassName (sprintf "button %s" clase )
@@ -25,6 +25,7 @@ let navButton1 clase href  texto  =
       [ span
           [ ]
           [ str texto]]
+
 let navButtons =
     span
         [ ClassName "navbar-item" ]

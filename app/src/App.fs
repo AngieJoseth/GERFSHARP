@@ -14,20 +14,20 @@ open Global
 importAll "../sass/main.sass"
 
 open Fable.Helpers.React
-open Fable.Helpers.React.Props
 
 
 let root model dispatch =
 
   let pageHtml page =
     match page with
-    | Home -> Home.View.root model.Home (HomeMsg >> dispatch)
+    | Page.Home -> Home.View.root
+    | Proveedor -> Proveedores.View.root model.Proveedor (ProveedorMsg >> dispatch)
 
   div
     []
     [ Navbar.View.root
       div[]
-         []]
+         [pageHtml model.CurrentPage ]]
 
 open Elmish.React
 open Elmish.Debug
