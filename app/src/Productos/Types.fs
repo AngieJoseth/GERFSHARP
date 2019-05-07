@@ -7,12 +7,7 @@ type Model =
       Unidad : string
       Precio: float 
       Proveedor : string
-       }
-type Page =
-    // Pages of App
-    | Productos
-    // Sub pages of App
-    
+       }    
   
     
 type Msg =
@@ -22,3 +17,5 @@ type Msg =
     | ChangeUnidad of string
     | ChangePrecio of float
     | ChangeProveedor of string
+
+

@@ -9,7 +9,8 @@ let init()=
       Cantidad = 0
       Unidad = ""
       Precio = 0.
-      Proveedor = "" }, Cmd.none
+      Proveedor = ""
+       }, Cmd.none
 
 //-----UPDATE
 

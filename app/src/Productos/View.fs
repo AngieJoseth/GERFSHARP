@@ -6,9 +6,12 @@ open Fable.Helpers.React
 open Fable.Helpers.React.Props
 open Types 
 
-let root1 model dispatch  =
+
+
+let root1 model  dispatch  =
             div [ ClassName "columns"]
-              [ aside [ ClassName "menu-list is-left"]
+               [
+                aside [ ClassName "menu-list is-left"]
                                 [ ul [ ClassName "menu-list"
                                        Style [Background "#424242"
                                               LineHeight "3.50"
@@ -16,8 +19,10 @@ let root1 model dispatch  =
                                               Display "block"
                                               Width "200px"
                                               Padding "5px" ] ]
-                                      [ li [ Style [Background "#A4A4A4" ]] [a [] [str "Productos"] ]
+                                      [ 
+                                        li [ Style [Background "#A4A4A4" ]] [a [] [str "Productos"] ]
                                         li [ Style [Background "#A4A4A4" ]] [a [ ] [str "Proveedor"]]] ]
+                
                 div [ ClassName "column is-offset-one-fifth"] [ 
                 br[]
                 div [ClassName "card-block is-centered"
