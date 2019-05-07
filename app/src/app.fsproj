@@ -5,6 +5,14 @@
   <ItemGroup>
     <!-- Global to the app -->
     <Compile Include="Global.fs" />
+    <!-- Pedidos -->
+    <Compile Include="Pedidos/Types.fs"/>
+    <Compile Include="Pedidos/State.fs"/>
+    <Compile Include="Pedidos/View.fs"/>
+    <!-- Productos -->
+    <Compile Include="Productos/Types.fs"/>
+    <Compile Include="Productos/State.fs"/>
+    <Compile Include="Productos/View.fs"/>
     <!-- Proveedores -->
     <Compile Include="Proveedores/Types.fs" />
     <Compile Include="Proveedores/State.fs" />

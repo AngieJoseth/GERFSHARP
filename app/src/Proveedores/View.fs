@@ -10,7 +10,7 @@ open Types
 let root model dispatch  =
             div [ClassName "card-block"
                  Style[ Width "420px"
-                        Height "300px"
+                        Height "320px"
                         Background "#DAE8F5"
                         BorderRadius 8
                         ] ]

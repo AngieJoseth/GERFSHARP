@@ -45,7 +45,40 @@ let navButtons1 =
         li
           []
           [ navButton1 "is-dark" "" "Pedidos"]]
+          
+type Page =
+    | Home
+    | Proveedor
+    | Productos
+    | Pedidos
+let toHash page =
+    match page with
+    | Home -> "#home"
+    | Proveedor -> "#proveedor"
+    | Productos -> "#productos"
+    | Pedidos -> "#pedidos"
 
+// let menuItem page currentPage =
+//     li
+//       [ ]
+//       [ a
+//           [ ClassName [ Page 
+//            currentPage ]
+//             Href (toHash page) ][]
+// //            ]
+// let menu currentPage =
+//   aside
+//     [ ClassName "menu" ]
+//     [ p
+//         [ ClassName "menu-label" ]
+//         [ str "General" ]
+//       ul
+//         [ ClassName "menu-list" ]
+//         [ menuItem  Home currentPage
+//           menuItem  Productos currentPage
+//           menuItem  Page.Proveedor currentPage
+//          // menuItem "Modular" Modular currentPage 
+//           ] ]
 
 let root =
     nav
