@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Productos.fs"/>
+    <Compile Include="YaviracContext.fs"/>
+    <Compile Include="TaskBuilder.fs"/>
+    <Compile Include="ProductoController.fs"/>
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <PackageReference Include="Giraffe" Version="3.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.2" />
+  </ItemGroup>
+
+</Project>
